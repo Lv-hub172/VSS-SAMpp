@@ -28,7 +28,21 @@ conda install pytorch==2.2.0 torchvision torchaudio pytorch-cuda=11.8 -c pytorch
 
 pip install -r requirements.txt
 ```
+## Training
 
+Before training, please download the SAM pre-trained model weights and save them under the `checkpoints/` folder.
+
+Recommended checkpoint:
+
+- [SAM ViT-L](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth)
+
+Then start training with:
+
+```bash
+python train.py \
+    --root_path <Your data directory> \
+    --output <Your output directory> \
+    --ckpt ./checkpoints/sam_vit_l_0b3195.pth
 
 ## Acknowledgments
 Our code is based on [MA-SAM](https://github.com/cchen-cc/MA-SAM/tree/main), [SAMed](https://github.com/hitachinsk/SAMed), [FacT](https://github.com/JieShibo/PETL-ViT/tree/main/FacT), and [Segment Anything](https://github.com/facebookresearch/segment-anything). We appreciate the authors for their great works.

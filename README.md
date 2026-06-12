@@ -49,6 +49,21 @@ python train.py \
     --ckpt ./checkpoints/sam_vit_l_0b3195.pth
 ```
 
+## Inference
+
+To perform inference with the trained VSS-SAM++ model, run:
+
+```bash
+python test.py \
+    --adapt_ckpt /path/to/your/trained_model.pth \
+    --data_path /path/to/your/data \
+    --ckpt ./checkpoints/sam_vit_l_0b3195.pth \
+    --is_savenii
+```
+
+Running this command will output the Dice evaluation metrics. The argument `--is_savenii` will save the corresponding `.nii.gz` prediction files for further visualization and analysis.
+
+
 ## Acknowledgments
 
 Our code is based on [MA-SAM](https://github.com/cchen-cc/MA-SAM/tree/main), [SAMed](https://github.com/hitachinsk/SAMed), [FacT](https://github.com/JieShibo/PETL-ViT/tree/main/FacT), and [Segment Anything](https://github.com/facebookresearch/segment-anything). We appreciate the authors for their great works.
